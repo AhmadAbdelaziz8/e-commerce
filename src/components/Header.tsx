@@ -24,12 +24,12 @@ const Header = () => {
 
       {/* Navigation Bar */}
       <nav aria-label="Main navigation">
-        <ul className="flex gap-12">
+        <ul className="flex gap-8 md:gap-12">
           {NAV_LINKS.map(({ path, label }) => (
             <li key={path}>
               <Link
                 to={path}
-                className="font-bold hover:text-[#56B280] transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#56B280] after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
+                className="font-bold text-gray-700 hover:text-[#56B280] transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#56B280] after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
               >
                 {label}
               </Link>
@@ -39,7 +39,7 @@ const Header = () => {
       </nav>
 
       {/* Account and Cart Icons */}
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-4 md:gap-6">
         <Link
           to="/account"
           className="p-2 rounded-full hover:bg-gray-100 transition-colors"
