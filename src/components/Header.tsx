@@ -5,7 +5,7 @@ import CartIcon from "../assets/Cart.svg"; // Import SVG as a React component
 
 const Header = () => {
   return (
-    <header className="flex justify-between items-center p-4 bg-white shadow-md">
+    <header className="flex justify-between items-center p-4 bg-white">
       {/* Logo Container */}
       <div className="flex items-center">
         {/* Brand Icon */}

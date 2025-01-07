@@ -4,9 +4,9 @@ import Footer from "./Footer.tsx";
 
 const Layout = () => {
   return (
-    <div>
+    <div className="w-screen h-screen flex flex-col">
       <Header />
-      <main>
+      <main className="flex-grow">
         <Outlet /> {/* This renders the matched route */}
       </main>
       <Footer />
