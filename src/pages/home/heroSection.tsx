@@ -7,7 +7,7 @@ const HeroSection = () => {
       {/* Overlay */}
       <div className="absolute inset-0 flex items-center justify-center">
         {/* Hero Card */}
-        <div className="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg text-center max-w-md">
+        <div className="bg-white bg-opacity-50 p-8 rounded-lg shadow-lg text-center max-w-md">
           <h1 className="text-4xl font-bold text-gray-800 mb-4">
             Welcome to Our Store
           </h1>
