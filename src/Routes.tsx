@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/home/homePage";
-import NotFound from "./pages/NotFoundPage"; // Example of a 404 page
-import Layout from "./components/layout";
+import NotFound from "./pages/NotFoundPage";
+import Layout from "./components/Layout/Layout";
 import ShopCartPage from "./pages/ShopCart/ShopCartPage";
 
 const AppRoutes = () => {

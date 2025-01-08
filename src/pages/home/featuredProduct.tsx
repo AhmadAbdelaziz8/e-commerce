@@ -1,4 +1,4 @@
-import ProductCard from "../../components/productCard";
+import ProductCard from "../../components/ProductCard";
 import { Product } from "../../types";
 
 interface FeaturedProductsProps {

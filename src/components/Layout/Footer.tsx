@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import BrandIcon from "../assets/brand-icon.svg";
+import BrandIcon from "/home/ahmad/repos/e-commerce/src/assets/brand-icon.svg";
 
 const Footer = () => {
   return (

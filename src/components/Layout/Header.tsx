@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import BrandIcon from "../assets/brand-icon.svg";
-import AccountIcon from "../assets/Profile.svg";
-import CartIcon from "../assets/Cart.svg";
+import BrandIcon from "/home/ahmad/repos/e-commerce/src/assets/brand-icon.svg";
+import AccountIcon from "/home/ahmad/repos/e-commerce/src/assets/Profile.svg";
+import CartIcon from "/home/ahmad/repos/e-commerce/src/assets/Cart.svg";
 
 const NAV_LINKS = [
   { path: "/", label: "Home" },
