@@ -7,10 +7,11 @@ import ShopCartPage from "./pages/ShopCart/ShopCartPage";
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="" element={<Layout />}>
+      {/* Parent route with Layout */}
+      <Route element={<Layout />}>
+        {/* Child routes */}
         <Route path="/" element={<Home />} />
-        {/* <Route path="/about" element={<About />} /> */}
-        <Route path="/shop-cart" element={<ShopCartPage />}></Route>
+        <Route path="/shop-cart" element={<ShopCartPage />} />
         <Route path="*" element={<NotFound />} />{" "}
         {/* Catch-all route for 404 */}
       </Route>
