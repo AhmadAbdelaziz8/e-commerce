@@ -1,8 +1,9 @@
+import BackGroundImage from "../../assets/bg-image.jpg";
 const HeroSection = () => {
   return (
     <div
       className="w-full h-screen bg-cover bg-center relative"
-      style={{ backgroundImage: "url('/src/assets/bg-image.jpg')" }}
+      style={{ backgroundImage: `url(${BackGroundImage})` }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 flex items-center justify-center">

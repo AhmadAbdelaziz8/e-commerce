@@ -3,7 +3,7 @@ import AppRoutes from "./Routes";
 
 const App = () => {
   return (
-    <Router basename="e-commerce">
+    <Router>
       <AppRoutes />
     </Router>
   );

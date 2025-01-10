@@ -7,7 +7,7 @@ import svgr from "vite-plugin-svgr";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), svgr()],
-  base: "/e-commerce/", // Set this to your subpath if needed (e.g., '/my-app/')
+  base: "../e-commerce/", // Set this to your subpath if needed (e.g., '/my-app/')
   css: {
     postcss: {
       plugins: [tailwindcss, autoprefixer],

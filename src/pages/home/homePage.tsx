@@ -1,7 +1,6 @@
 import HeroSection from "../home/heroSection";
 import FeaturedProducts from "../home/featuredProduct";
 import { Product } from "../../types";
-// import { Product } from ".../t";
 
 const Home = () => {
   // Example product data
