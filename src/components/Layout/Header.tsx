@@ -53,14 +53,16 @@ const Header = () => {
 
           {/* Account and Cart Icons */}
           <div className="flex items-center space-x-2 sm:space-x-4">
+            {/* Account */}
             <Link
-              to="/account"
+              to="/login-page"
               className="p-2 rounded-full hover:bg-gray-100 transition-colors"
               aria-label="Account"
             >
               <img src={AccountIcon} alt="" className="w-6 h-6 sm:w-7 sm:h-7" />
             </Link>
 
+            {/* Cart */}
             <Link
               to="/cart"
               className="p-2 rounded-full hover:bg-gray-100 transition-colors relative"

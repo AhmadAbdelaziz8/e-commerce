@@ -3,6 +3,7 @@ import Home from "./pages/home/homePage";
 import NotFound from "./pages/NotFoundPage";
 import Layout from "./components/Layout/Layout";
 import ShopCartPage from "./pages/ShopCart/ShopCartPage";
+import AuthPage from "./pages/AuthPage";
 
 const AppRoutes = () => {
   return (
@@ -12,6 +13,7 @@ const AppRoutes = () => {
         {/* Child routes */}
         <Route path="/" element={<Home />} />
         <Route path="/shop-cart" element={<ShopCartPage />} />
+        <Route path="/login-page" element={<AuthPage />} />{" "}
         <Route path="*" element={<NotFound />} />{" "}
         {/* Catch-all route for 404 */}
       </Route>
