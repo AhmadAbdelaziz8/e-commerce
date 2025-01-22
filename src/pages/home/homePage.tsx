@@ -12,7 +12,7 @@ const Home = () => {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          "https://fakestoreapi.com/products?limit=10"
+          "https://fakestoreapi.com/products?limit=8"
         );
         if (!response.ok) throw new Error("Failed to fetch products");
 
@@ -70,7 +70,7 @@ const Home = () => {
   return (
     <div className="flex flex-col">
       <HeroSection />
-      <FeaturedProducts products={products}/>
+      <FeaturedProducts products={products} />
     </div>
   );
 };
