@@ -70,24 +70,7 @@ const Home = () => {
   return (
     <div className="flex flex-col">
       <HeroSection />
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-          {products.map((product) => (
-            <div key={product.id} className="bg-white p-4 rounded-lg shadow">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-48 object-contain mb-4"
-              />
-              <h3 className="font-semibold mb-2">{product.name}</h3>
-              <p className="text-gray-600 mb-2">${product.price}</p>
-              <button className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
-                Add to Cart
-              </button>
-            </div>
-          ))}
-        </div>
-      </div>
+      <FeaturedProducts products={products}/>
     </div>
   );
 };
