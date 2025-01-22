@@ -6,11 +6,26 @@ import svgr from "vite-plugin-svgr";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), svgr()],
-  base: "../e-commerce/", // Set this to your subpath if needed (e.g., '/my-app/')
+  plugins: [
+    react(),
+    svgr({
+      svgrOptions: {
+        icon: true, // Optional: if using SVGs as icons
+      },
+    }),
+  ],
   css: {
     postcss: {
-      plugins: [tailwindcss, autoprefixer],
+      plugins: [
+        tailwindcss(), // Add parentheses to invoke as function
+        autoprefixer(), // Add parentheses here too
+      ],
+    },
+  },
+  resolve: {
+    alias: {
+      // Add any necessary aliases here
+      "@": "/src",
     },
   },
 });

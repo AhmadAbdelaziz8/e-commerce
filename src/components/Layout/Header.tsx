@@ -6,7 +6,7 @@ import CartIcon from "../../assets/Cart.svg";
 
 const NAV_LINKS = [
   { path: "/", label: "Home" },
-  { path: "/about", label: "About" },
+  { path: "/about-page", label: "About" },
   { path: "/contact", label: "Contact" },
 ] as const;
 
