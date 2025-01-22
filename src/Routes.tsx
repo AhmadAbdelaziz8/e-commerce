@@ -3,7 +3,7 @@ import Home from "./pages/home/homePage";
 import NotFound from "./pages/NotFoundPage";
 import Layout from "./components/Layout/Layout";
 import ShopCartPage from "./pages/ShopCart/ShopCartPage";
-import AuthPage from "./pages/AuthPage";
+import AuthPage from "./pages/AuthPage/AuthPage";
 
 const AppRoutes = () => {
   return (
