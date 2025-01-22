@@ -7,7 +7,7 @@ import CartIcon from "../../assets/Cart.svg";
 const NAV_LINKS = [
   { path: "/", label: "Home" },
   { path: "/about-page", label: "About" },
-  { path: "/contact", label: "Contact" },
+  { path: "/contact-page", label: "Contact" },
 ] as const;
 
 const Header = () => {

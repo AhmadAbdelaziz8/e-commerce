@@ -5,6 +5,8 @@ import Layout from "./components/Layout/Layout";
 import ShopCartPage from "./pages/ShopCart/ShopCartPage";
 import AuthPage from "./pages/AuthPage/AuthPage";
 import AboutPage from "./pages/aboutPage";
+import ContactPage from "./pages/ContactPage";
+import ExplorePage from "./pages/ExplorePage";
 
 const AppRoutes = () => {
   return (
@@ -14,6 +16,8 @@ const AppRoutes = () => {
         {/* Child routes */}
         <Route path="/" element={<Home />} />
         <Route path="/about-page" element={<AboutPage />} />
+        <Route path="/contact-page" element={<ContactPage />} />
+        <Route path="/explore-page" element={<ExplorePage />} />
         <Route path="/shop-cart" element={<ShopCartPage />} />
         <Route path="/login-page" element={<AuthPage />} />{" "}
         <Route path="*" element={<NotFound />} />{" "}

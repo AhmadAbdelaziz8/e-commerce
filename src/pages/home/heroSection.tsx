@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import BackGroundImage from "../../assets/bg-image.jpg";
+
 const HeroSection = () => {
   return (
     <div
@@ -16,9 +18,12 @@ const HeroSection = () => {
             Discover the best products at unbeatable prices. Shop now and enjoy
             exclusive deals!
           </p>
-          <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+          <Link
+            to="/explore-page"
+            className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+          >
             Shop Now
-          </button>
+          </Link>
         </div>
       </div>
     </div>
