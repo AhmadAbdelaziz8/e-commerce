@@ -6,7 +6,9 @@ export interface Product {
   description: string;
   category: string;
   stock: number;
+  rating?: number;
 }
+
 export interface CartItem {
   id: number;
   name: string;

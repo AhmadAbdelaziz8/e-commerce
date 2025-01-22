@@ -1,98 +1,93 @@
+import { useEffect, useState } from "react";
 import HeroSection from "../home/heroSection";
 import FeaturedProducts from "../home/featuredProduct";
 import { Product } from "../../types";
 
 const Home = () => {
-  // Example product data
-  interface Product {
-    id: number;
-    name: string;
-    price: number;
-    image: string;
-    description: string;
-    category: string;
-    stock: number;
-  }
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const products: Product[] = [
-    {
-      id: 1,
-      name: "Winter Pine Candle",
-      price: 24.99,
-      image: "https://images.unsplash.com/photo-1580327344181-c1163234e5a0",
-      description: "Fresh forest aroma with notes of cedar and vetiver",
-      category: "Seasonal",
-      stock: 50,
-    },
-    {
-      id: 2,
-      name: "Lavender Fields",
-      price: 22.99,
-      image: "https://images.unsplash.com/photo-1580327344343-c716195d0d8a",
-      description: "Calming floral scent with herbal undertones",
-      category: "Floral",
-      stock: 35,
-    },
-    {
-      id: 3,
-      name: "Vanilla Dream",
-      price: 19.99,
-      image: "https://images.unsplash.com/photo-1580327344181-5e363310e3a1",
-      description: "Warm vanilla bean with a hint of caramel",
-      category: "Sweet",
-      stock: 60,
-    },
-    {
-      id: 4,
-      name: "Ocean Breeze",
-      price: 27.99,
-      image: "https://images.unsplash.com/photo-1580327344343-5113146a4d6a",
-      description: "Crisp aquatic fragrance with sea salt notes",
-      category: "Fresh",
-      stock: 25,
-    },
-    {
-      id: 5,
-      name: "Citrus Burst",
-      price: 21.99,
-      image: "https://images.unsplash.com/photo-1580327344181-c1163234e5a0",
-      description: "Zesty blend of orange, lemon, and grapefruit",
-      category: "Fruity",
-      stock: 45,
-    },
-    {
-      id: 6,
-      name: "Sandalwood Sanctuary",
-      price: 29.99,
-      image: "https://images.unsplash.com/photo-1580327344343-5113146a4d6a",
-      description: "Rich woody aroma with earthy undertones",
-      category: "Woody",
-      stock: 30,
-    },
-    {
-      id: 7,
-      name: "Spiced Chai",
-      price: 26.99,
-      image: "https://images.unsplash.com/photo-1580327344181-5e363310e3a1",
-      description: "Warm blend of cinnamon, cardamom, and black tea",
-      category: "Spicy",
-      stock: 40,
-    },
-    {
-      id: 8,
-      name: "Fresh Linen",
-      price: 19.99,
-      image: "https://images.unsplash.com/photo-1580327344343-5113146a4d6a",
-      description: "Clean cotton scent reminiscent of sun-dried laundry",
-      category: "Clean",
-      stock: 55,
-    },
-  ];
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch(
+          "https://fakestoreapi.com/products?limit=10"
+        );
+        if (!response.ok) throw new Error("Failed to fetch products");
+
+        const data = await response.json();
+
+        const storeProducts: Product[] = data.map((product: any) => ({
+          id: product.id,
+          name: product.title,
+          price: product.price,
+          image: product.image,
+          description: product.description,
+          category: product.category,
+          stock: Math.floor(Math.random() * 50) + 10,
+          rating: product.rating.rate,
+        }));
+
+        setProducts(storeProducts);
+        setLoading(false);
+      } catch (err) {
+        setError(
+          err instanceof Error ? err.message : "Failed to fetch products"
+        );
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  if (loading)
+    return (
+      <div className="text-center py-12">
+        <div className="animate-pulse space-y-4">
+          <div className="h-4 bg-gray-200 rounded w-1/4 mx-auto"></div>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {[...Array(10)].map((_, i) => (
+              <div key={i} className="bg-white p-4 rounded-lg shadow">
+                <div className="h-48 bg-gray-200 rounded-lg mb-4"></div>
+                <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
+                <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+
+  if (error)
+    return (
+      <div className="text-center py-12 text-red-500">
+        Error loading products: {error}
+      </div>
+    );
 
   return (
     <div className="flex flex-col">
       <HeroSection />
-      <FeaturedProducts products={products} />
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          {products.map((product) => (
+            <div key={product.id} className="bg-white p-4 rounded-lg shadow">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full h-48 object-contain mb-4"
+              />
+              <h3 className="font-semibold mb-2">{product.name}</h3>
+              <p className="text-gray-600 mb-2">${product.price}</p>
+              <button className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+                Add to Cart
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
