@@ -37,7 +37,7 @@ const ContactPage = () => {
                 Ahmad Abdelaziz
               </h1>
               <p className="text-xl text-gray-600 mb-8">
-                General Surgeon & Front-End Software Developer
+                General Surgeon & Front-End Software Engineer
               </p>
             </Slide>
           </div>

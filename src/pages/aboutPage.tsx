@@ -120,7 +120,7 @@ const AboutPage = () => {
               <AttentionSeeker effect="pulse" delay={1500} triggerOnce>
                 <div className="mt-8">
                   <a
-                    href="https://github.com/yourusername/candleaf"
+                    href="https://github.com/AhmadAbdelaziz8/e-commerce"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition-colors"
