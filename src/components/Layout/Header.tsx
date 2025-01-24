@@ -64,7 +64,7 @@ const Header = () => {
 
             {/* Cart */}
             <Link
-              to="/cart"
+              to="/shop-cart"
               className="p-2 rounded-full hover:bg-gray-100 transition-colors relative"
               aria-label="Shopping cart"
             >
